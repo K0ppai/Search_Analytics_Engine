@@ -1,5 +1,5 @@
 class Search < ApplicationRecord
   belongs_to :user
 
-  validates :title, presence: true
+  validates :query, presence: true
 end
