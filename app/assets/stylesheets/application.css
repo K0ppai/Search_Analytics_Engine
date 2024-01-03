@@ -19,6 +19,7 @@
 body {
   background-color: var(--main-background-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 .main_title {

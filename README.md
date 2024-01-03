@@ -50,7 +50,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Click this [link](https://Search_Analytics_Engine-koppai.vercel.app/) for live view.
+- Click this [link](https://search-enginee-ceb7b44283a9.herokuapp.com/) for live view.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

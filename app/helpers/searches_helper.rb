@@ -4,10 +4,7 @@ module SearchesHelper
 
     return false unless words.length >= 3
 
-    words.each do |word|
-      return false if word.length < 2
-    end
-    true
+    words[-1].length > 2 && words[0].length >= 2
   end
 
   def update_or_create_search(query, user)
