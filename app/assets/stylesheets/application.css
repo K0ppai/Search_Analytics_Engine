@@ -148,7 +148,7 @@ input[type='submit'] {
   .search_bar_container {
     width: 50%;
     margin: 20px auto;
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   .auth_container {
@@ -160,7 +160,7 @@ input[type='submit'] {
   .search_bar_container {
     width: 40%;
     margin: 20px auto;
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   .auth_container {
@@ -168,6 +168,6 @@ input[type='submit'] {
   }
 
   .main_container {
-    padding: 0px 70px;
+    padding: 0 70px;
   }
 }

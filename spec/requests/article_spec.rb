@@ -1,19 +1,19 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "/articles", type: :request do
+RSpec.describe '/articles', type: :request do
   let(:user) { build(:user) }
 
   before :each do
     sign_in user
   end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       get articles_url
       expect(response).to be_successful
     end
 
-    it "renders a correct template" do
+    it 'renders a correct template' do
       get articles_url
       expect(response).to render_template(:index)
     end

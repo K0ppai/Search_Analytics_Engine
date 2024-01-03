@@ -1,13 +1,13 @@
 module SearchesHelper
   def search_valid?(input)
-    words = input.strip.split(" ")
+    words = input.strip.split
 
-    if words.length >= 3
-      words.each do |word|
-        return false if word.length < 2
-      end
-      return true
+    return false unless words.length >= 3
+
+    words.each do |word|
+      return false if word.length < 2
     end
+    true
   end
 
   def update_or_create_search(query, user)

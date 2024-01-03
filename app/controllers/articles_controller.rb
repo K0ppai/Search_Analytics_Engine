@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   include SearchesHelper
-  before_action :set_query, only: %i[ index ]
+  before_action :set_query, only: %i[index]
 
   def index
     if @query.present?
