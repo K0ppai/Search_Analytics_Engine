@@ -30,7 +30,7 @@ module SearchesHelper
 
     res = connection.post do |req|
       req.headers['Content-Type'] = 'application/json'
-      req.headers['Authorization'] = 'Bearer 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'
+      req.headers['Authorization'] = 'Bearer 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'
       req.body = {
         model: 'gpt-3.5-turbo',
         messages: [
