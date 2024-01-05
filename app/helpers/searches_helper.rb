@@ -1,4 +1,4 @@
-require 'faraday'
+require "faraday"
 
 module SearchesHelper
   def search_valid?(input)
@@ -22,32 +22,32 @@ module SearchesHelper
   end
 
   def convert_queries_to_string(queries)
-    queries.pluck(:query, :id).map { |s| "'{#{s[0]}},#{s[1]}'" }.join(',')
+    queries.pluck(:query, :id).map { |s| "'{#{s[0]}},#{s[1]}'" }.join(",")
   end
 
-  def filter_valid_queries_ids(queries)
-    connection = Faraday.new(url: 'https://api.openai.com/v1/chat/completions')
+  def filter_valid_queries_ids(queries, api_key)
+    connection = Faraday.new(url: "https://api.openai.com/v1/chat/completions")
 
     res = connection.post do |req|
-      req.headers['Content-Type'] = 'application/json'
-      req.headers['Authorization'] = 'Bearer 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'
+      req.headers["Content-Type"] = "application/json"
+      req.headers["Authorization"] = "Bearer #{api_key}"
       req.body = {
-        model: 'gpt-3.5-turbo',
+        model: "gpt-3.5-turbo",
         messages: [
           {
-            role: 'system',
-            content: "You're a grammar checker. I'll send you the inputs with their number in this format '{input},number' separated by commas. Your task is to filter everything that are not questions.If you can't read the sentence or words, simply ignore them. Send me the number of the grammatically correct questions that have objects by separating them by commas. If there is none, simply send back a empty space."
+            role: "system",
+            content: "You're a grammar checker. I'll send you the inputs with their number in this format '{input},number' separated by commas. Your task is to filter everything that are not questions.If you can't read the sentence or words, simply ignore them. Send me the number of the grammatically correct questions that have objects by separating them by commas. If there is none, simply send back a empty space.",
           },
           {
-            role: 'user',
-            content: queries.to_s
-          }
+            role: "user",
+            content: queries.to_s,
+          },
         ],
-        temperature: 0.7
+        temperature: 0.7,
       }.to_json
     end
 
     response = JSON.parse(res.body)
-    response['choices'][0]['message']['content'].split(',')
+    response["choices"][0]["message"]["content"].split(",")
   end
 end
