@@ -75,5 +75,7 @@ end
 
 gem 'devise', '~> 4.9.2'
 gem 'faker'
+gem 'faraday', '~> 2.7'
 gem 'pg_search'
+gem 'rest-client', '~> 2.1'
 gem 'rubocop', '>= 1.0', '< 2.0'
