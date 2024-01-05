@@ -1,27 +1,29 @@
-john = User.create(
-  email: 'john@gmail.com',
-  password: '123123',
-  name: 'John'
-)
+Search.all.delete_all
 
-tom = User.create(
-  email: 'tom@gmail.com',
-  password: '123123',
-  name: 'Tom'
-)
+# john = User.create(
+#   email: 'john@gmail.com',
+#   password: '123123',
+#   name: 'John'
+# )
 
-10.times do
-  Article.create(
-    title: Faker::Name.unique.name,
-    content: Faker::Lorem.paragraph_by_chars,
-    user_id: john.id
-  )
-end
+# tom = User.create(
+#   email: 'tom@gmail.com',
+#   password: '123123',
+#   name: 'Tom'
+# )
 
-10.times do
-  Article.create(
-    title: Faker::Name.unique.name,
-    content: Faker::Lorem.paragraph_by_chars,
-    user_id: tom.id
-  )
-end
+# 10.times do
+#   Article.create(
+#     title: Faker::Name.unique.name,
+#     content: Faker::Lorem.paragraph_by_chars,
+#     user_id: john.id
+#   )
+# end
+
+# 10.times do
+#   Article.create(
+#     title: Faker::Name.unique.name,
+#     content: Faker::Lorem.paragraph_by_chars,
+#     user_id: tom.id
+#   )
+# end
